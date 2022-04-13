@@ -4,10 +4,9 @@ const badgeEl = document.querySelector("header .badges");
 const fadeEls = document.querySelectorAll(".visual .fade-in");
 const promotionEl = document.querySelector(".promotion");
 const promotionToggleBtn = document.querySelector(".toggle-promotion");
-let isHidePromotion = false;
 const spyEls = document.querySelectorAll("section.scroll-spy");
 const toTopEl = document.querySelector("#to-top");
-
+let isHidePromotion = false;
 
 // FUNCTION SECTION
 
