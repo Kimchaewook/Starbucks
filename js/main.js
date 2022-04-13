@@ -1,32 +1,14 @@
 // variable section
 
-const searchEl = document.querySelector(".search");
-const searchInputEl = searchEl.querySelector("input");
 const badgeEl = document.querySelector("header .badges");
 const fadeEls = document.querySelectorAll(".visual .fade-in");
 const promotionEl = document.querySelector(".promotion");
 const promotionToggleBtn = document.querySelector(".toggle-promotion");
-let isHidePromotion = false;
 const spyEls = document.querySelectorAll("section.scroll-spy");
-const thisYear = document.querySelector(".this-year");
 const toTopEl = document.querySelector("#to-top");
-
+let isHidePromotion = false;
 
 // FUNCTION SECTION
-
-function speardSearchBar() {
-  searchInputEl.focus();
-}
-
-function speardSearchInput() {
-  searchEl.classList.add("focused");
-  searchInputEl.setAttribute("placeholder", "통합검색");
-}
-
-function closedSearchInput() {
-  searchEl.classList.remove("focused");
-  searchInputEl.setAttribute("placeholder", "");
-}
 
 function loadPage() {
   console.log(window.scrollY);
@@ -109,10 +91,6 @@ function toTopScroll() {
 
 // EVENT INIT
 
-searchEl.addEventListener("click", speardSearchBar);
-searchInputEl.addEventListener("focus", speardSearchInput);
-searchEl.addEventListener("blur", closedSearchInput);
-searchInputEl.addEventListener("blur", closedSearchInput );
 window.addEventListener("scroll", _.throttle(loadPage, 300));
 fadeEls.forEach(fadeIn);
 promotionToggleBtn.addEventListener("click", hidePromotion);
@@ -120,7 +98,6 @@ floatingObject(".floating1", 1, 15);
 floatingObject(".floating2", .5, 15);
 floatingObject(".floating3", 1.5, 20);
 spyEls.forEach(scroll);
-thisYear.textContent = new Date().getFullYear();
 toTopEl.addEventListener("click", toTopScroll);
 
 
